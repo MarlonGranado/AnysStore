@@ -4,7 +4,16 @@
     box-sizing: border-box;
     background-color: #140400;
 }
-
+@keyframes slideUp {
+  0% {
+    transform: translateY(50px); /* Comienza 50px hacia abajo */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);    /* Termina en su posición original */
+    opacity: 1;                  /* Se hace visible */
+  }
+}
 h1{
     font-size: 5em;
     font-family: 'Great Vibes',cursive;
@@ -28,16 +37,20 @@ h1{
     justify-content: center
 }
 .img_inicial_container p {
+     opacity: 0;
     background-color: transparent;
     position: relative;
-    top: -50px;
+    top: -40px;
     padding: 0 60px;
     text-align: center;
-    padding-right: 1em;
     font-size: 1.3em;
     color: white;
     text-shadow: 2px 2px 5px rgb(151, 8, 84);
 }
+.img_inicial_container .active{              
+    animation: slideUp 2s forwards;
+}
+
 .img_inicial {
     background-color: transparent;
     filter: drop-shadow(15px 10px 15px rgba(116, 5, 5, 0.4));
